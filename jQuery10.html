@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>JQuery</title>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+		<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="barStyle.css">
+		<script>
+				$(document).ready(function(){
+					$( function() {
+						$( "#datepicker" ).datepicker();
+					});
+					
+					$("#firstFade").click(function() {
+						$(document.getElementById("first")).fadeToggle("slow");
+					});
+					$("#secondFade").click(function() {
+						$(document.getElementById("second")).fadeToggle("slow");
+					});
+					$("#thirdFade").click(function() {
+						$(document.getElementById("third")).fadeToggle("slow");
+					});
+					// This website helped me:
+					// https://www.tutorialspoint.com/jqueryui/jqueryui_progressbar.htm 
+					$(function() {
+					var progressbar = $( "#progressbar-5" );
+					progressLabel = $( ".progress-label" );
+					$( "#progressbar-5" ).progressbar({
+					value: false,
+					change: function() {
+							progressLabel.text( 
+							progressbar.progressbar( "value" ) + "%" );
+               },
+				   complete: function() {
+					  progressLabel.text( "Loading Completed!" );
+				   }
+				});
+					function progress() {
+					   var val = progressbar.progressbar( "value" ) || 0;
+					   progressbar.progressbar( "value", val + 1 );
+					   if ( val < 99 ) {
+						  setTimeout( progress, 200 );
+					   }
+					}
+					setTimeout( progress, 3000 );
+				 });
+					
+				
+					//changing to yellow 
+					$("#first").mouseenter(function(){
+						document.getElementById("first").style.background = "yellow";
+					});
+					$("#second").mouseenter(function(){
+						document.getElementById("second").style.background = "yellow";
+					});
+					$("#third").mouseenter(function(){
+						document.getElementById("third").style.background = "yellow";
+					});
+					
+					//changing back to white on leave
+					$("#first").mouseleave(function(){
+						document.getElementById("first").style.background = "white";
+					});
+					$("#second").mouseleave(function(){
+						document.getElementById("second").style.background = "white";
+					});
+					$("#third").mouseleave(function(){
+						document.getElementById("third").style.background = "white";
+					});
+					
+					$( function() {
+						$( "#accord" ).accordion({
+							collapsible: true,
+							active: false
+						});
+				
+					});
+				});
+		
+			</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<input type="checkbox" id="show-search">
+				<input type="checkbox" id="show-menu">
+				<label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+				<div class="content">
+					<div class="logo"><a href="index.html">Powell's Website</a></div>
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="aboutme.html">About</a></li>
+							<li>
+							<a href="#" class="desktop-link">Assignments</a>
+							<input type="checkbox" id="show-features">
+							<label for="show-features">Assignments</label>
+								<ul style="height: 700%; overflow: auto">
+									<li><a href="layout.html">ACME Widgets</a></li>
+									<li><a href="chapter04.html">JavaScript Events</a></li>
+									<li><a href="helloworld.php">Hello World!</a></li>
+									<li><a href="MovingButtons.html">Moving Buttons</a></li>
+									<li><a href="cards.html">Cards Demo</a></li>
+									<li><a href="loops.html">Dynamic Card Demo</a></li>
+									<li><a href="keyPress.html">Key Press</a></li>
+									<li><a href="jQuery10.html">jQuery Demo</a></li>
+									<li><a href="project1.html">Audio Changer</a></li>
+									<li><a href="prime.html">Prime Numbers</a></li>
+									<li><a href="livesearch.html">AJAX Live Search</a></li>
+									<li><a href="programExam2.php">PHP Program Exam</a></li>
+									<li><a href="chpt18.php">Record Insertion Form</a></li>
+								</ul>
+							</li>
+							<li><a href="seestore.php">Store</a></li>
+							<li><a href="contactme.html">Contact</a></li>
+						</ul>
+				</div>
+				<label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+				<form action="#" class="search-box">
+				<input type="text" placeholder="Type Something to Search..." required>
+				<button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+				</form>
+			</nav>
+		</div>
+
+		<div class="dummy-text">
+			<h1>Assignment 10: JQuery</h1>
+			
+					<p style="text-align: right; padding-right:6%;" >Date: <input type="text" id="datepicker"></p>
+					
+					<div id="accordion">
+					<button id="firstFade">Fade First Division</button>
+					<button id="secondFade">Fade Second Division</button>
+					<button id="thirdFade">Fade Third Division</button>
+			
+			<div id="accord">
+						<h3 id="panel1">Panel 1</h3>
+						<div>
+							<p>
+							The best muffins:
+							</p>
+							<ul>
+							  <li>Blueberry</li>
+							  <li>Pumpkin</li>
+							</ul>
+						</div>
+						<h3 id="panel2">Panel 2</h3>
+						<div>
+							<p>
+							Chocolate cake is best.
+							</p>
+							<ul>
+							  <li>But so are chocolate cupcakes.</li>
+							</ul>
+						</div><br>
+					</div>
+
+	<p>This is a paragraph.</p><br>
+	<style>
+		p{
+			padding-left: .25%;
+		}
+	</style>
+	<div id="first" style="border: 1px solid black;">
+	  <p>A paragraph in a div. </p>
+	  <p>Another paragraph in a div.</p>
+	</div>
+	<br>
+
+	<div id="second" style="border: 1px solid black;">
+	  <p>A paragraph in another div.</p>
+	  <p>Another paragraph in another div.</p>
+	</div>
+	<br>
+
+	<div id="third" style="border: 1px solid black;">
+	  <p>A paragraph in another div.</p>
+	  <p>Another paragraph in another div.</p>
+	</div><br>
+			
+		<div <style="color: #20B2AA;" id = "progressbar-5">
+		<div class = "progress-label">
+            Loading...
+			 </div>
+		  </div>
+	</body>
+	<footer>
+		Copyright &copy; 2022 Talisa K. Powell
+	</footer>
+</html>
+

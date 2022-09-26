@@ -1,0 +1,47 @@
+#buttonStart {
+	background-color: white;
+	color:#20B2AA;
+	padding: 0.5em 1.5em;
+	border-radius: 1.8em 1.8em 1.8em 1.8em;
+	transition: transform 0.25s;
+	cursor: pointer;
+	margin-bottom: 2%;
+	margin-left: .5%;
+}
+
+#primesum{
+	background-color: white;
+	color:#20B2AA;
+	padding: 0.5em 1.5em;
+	border-radius: 1.8em 1.8em 1.8em 1.8em;
+	transition: transform 0.25s;
+	cursor: pointer;
+	
+}
+
+#nonprimesum{
+	background-color: white;
+	color:#20B2AA;
+	padding: 0.5em 1.5em;
+	border-radius: 1.8em 1.8em 1.8em 1.8em;
+	transition: transform 0.25s;
+	cursor: pointer;
+}
+
+#leftHead{
+	float: left;
+	background-color: #20B2AA;
+	color: white;
+	padding: 1%;
+	margin-left: 15%;
+	margin-bottom: 10%;
+}
+
+#rightHead{
+	background-color: #20B2AA;
+	float: right;
+	color: white;
+	padding: 1%;
+	margin-right: 15%;
+	margin-bottom: 10%;
+}

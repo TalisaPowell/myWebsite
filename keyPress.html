@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Displaying Keypresses</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript">
+	
+	vowels=["a", "e", "i", "o", "u"];
+    function displayKey(e) {
+       // which key was pressed?
+       if (e.keyCode) {
+          var keycode=e.keyCode;
+       }  else {
+          var keycode=e.which;
+       }
+       character=String.fromCharCode(keycode);
+		if (vowels.includes(character)){
+			character = character.toUpperCase();
+		}
+		
+		if (character=="r" || character=="R"){
+			changeColor("red");
+		}
+		if (character=="g" || character=="G"){
+			changeColor("green");
+		}
+		if (character=="b" || character=="B"){
+			changeColor("blue");
+		}
+   
+       // find the object for the destination paragraph
+       var keysParagraph = document.getElementById('keys');
+   
+       // add the character to the paragraph
+       keysParagraph.innerHTML += character;
+    }
+	
+	function changeColor(color){
+		document.body.style.background=color;
+		document.body.style.color= "white";
+	}
+   </script>
+  </head>
+  <body onkeypress="displayKey(event)">
+	<a href="index.html"><button class="home-1" >Back to Home</button></a>
+    <h1>Displaying Typed Characters</h1>
+    <p>This document includes a simple script that displays the keys you type as a new paragraph below. Type a few keys to try it. </p>
+    <div id="keys"></div>
+  </body>
+</html>

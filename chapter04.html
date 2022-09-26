@@ -1,0 +1,106 @@
+<!DOCTYPE>
+<html lang="en">
+	<head>
+		<title>JavaScript Events</title>
+	</head>
+
+	<body>
+		<h1>Assignment: JavaScript Events</h1>
+		
+		<button type="button" class="REDbt" onmouseover="hoverCountRED()" onclick="REDbutton()">RED</button>
+	
+		<button type="button" class="GREENbt" onmouseover="hoverCountGREEN()" onclick="GREENbutton()">GREEN</button>
+		
+		<button type="button" class="BLUEbt" onmouseover="hoverCountBLUE()" onclick="BLUEbutton()">BLUE</button>
+		
+		<h3>RED Count:<a id="counterR">0</a> GREEN Count:<a id="counterG">0</a> BLUE Count:<a id="counterB">0</a></h3>
+		<h3>RED Hover Count:<a id="countR">0</a> GREEN Hover Count: <a id="countG">0</a> BLUE Hover Count: <a id="countB">0</a></a></h3>
+
+		<style>
+
+			body{
+				font-family: Helvetica, Arial, sans-serif;
+				background-color: white;
+			}
+			.REDbt:hover{
+				background-color: white;
+				color: black;
+			}
+
+			.REDbt{
+				position: relative;
+				color: white;
+				background-color: black;
+			}
+			
+			.GREENbt{
+				position: relative;
+				color: white;
+				background-color: black;
+			}
+			.GREENbt:hover{
+				background-color: white;
+				color: black;
+			}
+			
+			.BLUEbt:hover{
+				background-color: white;
+				color: black;
+			}
+			
+			.BLUEbt{
+				position: relative;
+				color: white;
+				background-color: black;
+			}
+			
+
+		</style>
+		
+		<script>
+			
+			// button hover color changes
+			var countR = 0;
+			var countG = 0;
+			var countB = 0;
+			
+			function hoverCountRED(){
+				countR+=1;
+				document.getElementById("countR").innerHTML=countR;
+			}
+			function hoverCountGREEN(){
+				countG+=1;
+				document.getElementById("countG").innerHTML=countG;
+				
+			}
+			function hoverCountBLUE(){
+				countB+=1;
+				document.getElementById("countB").innerHTML=countB;
+			}
+			
+			//background color changes
+			var counterR = 0;
+			var counterG = 0;
+			var counterB = 0;
+			
+			function REDbutton(){
+				counterR +=1;
+				changeColor("red");
+				document.getElementById("counterR").innerHTML=counterR;
+			}
+			function GREENbutton(){
+				counterG +=1;
+				changeColor("green");
+				document.getElementById("counterG").innerHTML=counterG;
+			}
+			function BLUEbutton(){
+				counterB +=1;
+				changeColor("blue");
+				document.getElementById("counterB").innerHTML=counterB;
+			}
+			function changeColor(color) {
+				document.body.style.background=color;
+			}
+		</script>
+	</body>
+</html>
